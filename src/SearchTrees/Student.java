@@ -1,6 +1,6 @@
 package SearchTrees;
 
-public class Student{
+public class Student implements Comparable<Student>{
 	private String name;
 	private int matrikelNummer;
 
@@ -25,7 +25,7 @@ public class Student{
 
 	@Override
 	public String toString() {
-		return name;
+		return matrikelNummer + ": " + name;
 	}
 
 	@Override
@@ -39,6 +39,11 @@ public class Student{
 	@Override
 	public int hashCode() {
 		return matrikelNummer;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		return this.matrikelNummer - o.matrikelNummer;
 	}
 	
 }

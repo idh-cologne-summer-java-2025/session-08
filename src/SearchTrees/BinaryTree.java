@@ -43,7 +43,7 @@ public class BinaryTree<T extends Comparable<T>> {
 		void printInOrder() {
 			if (left != null)
 				left.printInOrder();
-			System.out.print(value + " ");
+			System.out.println(value + " ");
 			if (right != null)
 				right.printInOrder();
 		}

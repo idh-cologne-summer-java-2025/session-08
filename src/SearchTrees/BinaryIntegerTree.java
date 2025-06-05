@@ -25,12 +25,32 @@ public class BinaryIntegerTree {
 		 * @return true, wenn Wert hinzugefügt wurde, false, wenn er schon vorhandem war
 		 */
 		public boolean addValue(int value) {
-			// TODO: Implement!
-			return true;
+			
+			if(value>this.value) {
+				if(right==null) {
+					right= new BinaryIntegerTreeNode(value);
+					return true;
+				}
+				return right.addValue(value);
+			}
+			if(value<this.value) {
+				if(left==null) {
+					left= new BinaryIntegerTreeNode(value);
+					return true;
+				}
+				return left.addValue(value);
+			}
+			return false;
 		}
 
 		public void printInOrder() {
-			// TODO: Implement!
+			if(left!=null) {
+				left.printInOrder();
+			}
+			System.out.println(value);
+			if(right!=null) {
+				right.printInOrder();
+			}
 		}
 
 		public boolean contains(int searchValue) {
@@ -56,8 +76,13 @@ public class BinaryIntegerTree {
 	 * @return true, wenn Wert hinzugefügt wurde, false, wenn er schon vorhandem war
 	 */
 	public boolean addValue(int value) {
-		// TODO: Implement!
-		return true;
+		if(root==null) {
+			root = new BinaryIntegerTreeNode(value);
+			return true;
+		}
+		return root.addValue(value);
+		
+		
 	}
 
 	/**
